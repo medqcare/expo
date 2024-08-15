@@ -5330,7 +5330,7 @@ const DUMMIES_CLINIC = [
         test_id: 'fced27ad-3a17-477c-9475-d75eb347f902',
         test_name: 'Natrium',
         speciment: 'Serum',
-        price: 89400,
+        // price: 89400,
       },
       {
         test_id: '1141bcc5-0538-4b48-921c-8ba5d0550f11',

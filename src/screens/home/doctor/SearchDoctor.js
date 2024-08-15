@@ -61,6 +61,7 @@ function SearchDoctorPage(props) {
     setShow([]);
     setCurrentPage(0);
     props.getSpecialists();
+    console.log(DEFAULT_SPESIALIS, 'DEFAULT_SPESIALIS');
     _fetchDataDoctorPagination(DEFAULT_SPESIALIS);
   }, []);
 

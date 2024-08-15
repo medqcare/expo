@@ -38,7 +38,7 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import { ScrollView } from 'react-native-gesture-handler';
-import NotifService from '../../../../NotificationService';
+// import NotifService from '../../../../NotificationService';
 import InstructionModal from '../../../components/InstructionModal';
 import _checkLogin from '../../../helpers/getToken';
 import getToken from '../../../helpers/localStorage/token';
@@ -158,7 +158,7 @@ function HomePage(props) {
   };
 
 
-  const notif = new NotifService(onRegister);
+  // const notif = new NotifService(onRegister);
 
   BackHandler.addEventListener('hardwareBackPress', () => {
     BackHandler.exitApp();

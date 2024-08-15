@@ -1,4 +1,5 @@
 import keys from "../keys";
+import { baseURL } from "../../config";
 const { 
     SET_DOCTORS,
     SET_CONCAT_DOCTORS,
@@ -18,9 +19,12 @@ const initState = {
 }
 
 function doctorReducer(state = initState, action){
+    console.log('doctorReducer action', action, type)
+    console.log(baseURL, '<<<<< baseURL')
     const { type, payload } = action
     switch (type) {
         case SET_DOCTORS:
+            console.log(doctors, '<<<<< doctors')
             return { ...state, doctors: payload, error: null }
         case SET_CONCAT_DOCTORS:
             return { ...state, doctors: [...doctors, ...payload], error: null }
