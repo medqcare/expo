@@ -1,46 +1,51 @@
 import keys from "../keys";
 import { baseURL } from "../../config";
-const { 
+const {
     SET_DOCTORS,
     SET_CONCAT_DOCTORS,
     SET_CURRENT_PAGE,
     SET_SPECIALIST,
     SET_DOCTORS_LOADING,
     DELETE_DOCTORS,
-    SET_DOCTORS_ERROR
-} = keys.doctorKeys
+    SET_DOCTORS_ERROR,
+} = keys.doctorKeys;
 
 const initState = {
     doctors: [],
     isLoading: false,
     error: null,
     currentPage: 0,
-    specialist: 'All'
-}
+    specialist: "All",
+};
 
-function doctorReducer(state = initState, action){
-    console.log('doctorReducer action', action, type)
-    console.log(baseURL, '<<<<< baseURL')
-    const { type, payload } = action
+function doctorReducer(state = initState, action) {
+    console.log("doctorReducer action", action, type);
+    console.log(baseURL, "<<<<< baseURL");
+    const { type, payload } = action;
     switch (type) {
         case SET_DOCTORS:
-            console.log(doctors, '<<<<< doctors')
-            return { ...state, doctors: payload, error: null }
+            return { ...state, doctors: payload, error: null };
         case SET_CONCAT_DOCTORS:
-            return { ...state, doctors: [...doctors, ...payload], error: null }
+            return { ...state, doctors: [...doctors, ...payload], error: null };
         case SET_CURRENT_PAGE:
-            return { ...state, currentPage: payload }
+            return { ...state, currentPage: payload };
         case SET_SPECIALIST:
-            return { ...state, specialist: payload }
+            return { ...state, specialist: payload };
         case SET_DOCTORS_LOADING:
-            return { ...state, isLoading: payload }
+            return { ...state, isLoading: payload };
         case DELETE_DOCTORS:
-            return { doctors: [], isLoading: false, error: null, currentPage: 0, specialist: 'All' }
+            return {
+                doctors: [],
+                isLoading: false,
+                error: null,
+                currentPage: 0,
+                specialist: "All",
+            };
         case SET_DOCTORS_ERROR:
-            return { ...state, error: payload, isLoading: false }
+            return { ...state, error: payload, isLoading: false };
         default:
-            return state
+            return state;
     }
 }
 
-export default doctorReducer
+export default doctorReducer;
