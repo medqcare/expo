@@ -246,9 +246,12 @@ export function updateProfileData(updateData, patientID, parentID, navigate, nav
                 payload: data.data
             })
 
-            ToastAndroid.show(data.message, ToastAndroid.SHORT);
 
-            navigate(navigateTo)
+            const updatedFamily = data.data.family.find(family => family._id === patientID)
+
+            ToastAndroid.show(data.message, ToastAndroid.SHORT);
+            
+            navigate(navigateTo, { data: updatedFamily })
         } catch (error) {
             console.log(error)
         }

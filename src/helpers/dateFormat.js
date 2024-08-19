@@ -44,7 +44,7 @@ function dateWithDDMMMYYYYFormat(date) {
     'Mei',
     'Jun',
     'Jul',
-    'Ags',
+    'Agu',
     'Sep',
     'Okt',
     'Nov',
