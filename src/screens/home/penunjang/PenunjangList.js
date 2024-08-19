@@ -213,7 +213,7 @@ function MedicalServices({navigation, userData, getMedicalServices, userLocation
 				navigate={navigation.pop}
 				navigateBack = "Home"
 				title = "Layanan Medis"
-				placeholder={'Cari layanan atau Lab test'}
+				placeholder={'cari layanan medis...'}
 				searchFunction={searchFunction}
 				// option
 			/>

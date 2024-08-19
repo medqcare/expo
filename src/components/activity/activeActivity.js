@@ -8,7 +8,7 @@ import { fetchCurrentQueueingNumber } from '../../stores/action'
 import { ActivityIndicator } from 'react-native-paper';
 
 const activeActivity = (props) => {
-	let { queuingNumber, queueID } = props.data
+	let { queuingNumber, queueID, orderType } = props.data
 	queueID = JSON.stringify(queueID)
 	const { 
 		data, 
@@ -84,8 +84,8 @@ const activeActivity = (props) => {
 					<Text style={{ fontSize: 55, color: '#B5B5B5', fontWeight: 'bold' }}>
 						{' '}
 						{currentQueueingNumberLoading ? 
-							<ActivityIndicator size={'small'} color={ '#B5B5B5'}/> : 
-							currentQueueingNumber
+							<ActivityIndicator size={'small'} color={ '#B5B5B5'}/> : orderType === 'doctor' ?
+							'02' : '01'
 						}
 						{' '}
 					</Text>

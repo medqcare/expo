@@ -114,7 +114,6 @@ export default function ModalFilterDoctor({
     if (selectedKeyGender) {
       resultFilter.gender = GENDER_DICTIONARY[selectedKeyGender].value;
     }
-
     if (selectedSpecialist) {
       resultFilter.specialist = selectedSpecialist.name;
     }

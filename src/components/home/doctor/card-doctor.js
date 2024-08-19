@@ -17,24 +17,23 @@ function CardDoctor({ data, distance, userLocationReducer }) {
 
   const renderDoctorName = () => {
     let name = `${data.doctorName}`;
-    if (data.specialistId !== null && data.specialistId.length !== 0) {
-      if (distance === "Turn on location" ) {
-        name += `, ${data.specialistId.alias}`;
-      } else {
-        name += `, ${data.specialistId[0].alias}`;
-      }
-    }
+    // if (data.specialistId !== null && data.specialistId.length !== 0) {
+    //   if (distance === "Turn on location" ) {
+    //     name += `, ${data.specialistId.alias}`;
+    //   } else {
+    //     name += `, ${data.specialistId[0].alias}`;
+    //   }
+    // }
 
     return name;
   };
 
   const renderDoctorSpecialist = () => {
     let specialist = 'Umum';
-
     if (data.specialistId !== null && data.specialistId.length !== 0) {
       if (distance === "Turn on location" ) {
         specialist = `Spesialis ${data.specialistId.name}`
-      } else {
+      } else if (data.specialistId[0].name !== 'Umum') {
         specialist = `Spesialis ${data.specialistId[0].name}`
       }
     }

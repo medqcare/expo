@@ -12,7 +12,6 @@ import IcDokter from '../../assets/svg/ic_dokter';
 
 const activity = (props) => {
 	const { data } = props
-
 	BackHandler.addEventListener('hardwareBackPress', () => {
 		return props.navigation.navigate('Home');
 	});

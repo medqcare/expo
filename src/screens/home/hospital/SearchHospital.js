@@ -98,13 +98,13 @@ function SearchDoctorPage(props) {
                     marginLeft: 10,
                   }}
                 >
-                  Daftar Klinik
+                  Daftar Outlet
                 </Text>
               </View>
             </TouchableOpacity>
             <SearchBar
               autoFocus={true}
-              placeholder={'cari klinik'}
+              placeholder={'cari outlet'}
               onChangeText={(text) => _textChange(text)}
             />
           </View>

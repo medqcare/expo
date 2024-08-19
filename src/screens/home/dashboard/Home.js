@@ -272,7 +272,7 @@ function HomePage(props) {
                                 </View>
 
                                 <SearchBar
-                                    placeholder={"cari dokter atau spesialis"}
+                                    placeholder={"cari dokter..."}
                                     onFocus={() =>
                                         props.navigation.navigate("Doctor", {
                                             query: "SearchFromHome",

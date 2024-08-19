@@ -68,7 +68,7 @@ function SearchDoctorPage(props) {
     }, []);
 
     const _fetchDataDoctorPagination = async (params, filterQuery) => {
-        console.log(params, "params ...", currentPage);
+        console.log(filterQuery, "params ...", currentPage);
         if (params == DEFAULT_SPESIALIS) {
             props.searchAllDoctors(currentPageReducer, userLocation, doctors);
         } else if (filterQuery) {
@@ -216,14 +216,13 @@ function SearchDoctorPage(props) {
                                     <SearchBar
                                         autoFocus={true}
                                         placeholder={
-                                            "cari dokter atau spesialis"
+                                            "cari dokter..."
                                         }
                                         onChangeText={(text) => debouncedTextChange(text)}
                                     />
                                 </View>
                                 <TouchableOpacity
                                     onPress={() => {
-                                        console.log("terpanggil");
                                         setModalFilterIsActive(true);
                                     }}
                                 >

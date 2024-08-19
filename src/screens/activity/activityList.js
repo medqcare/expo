@@ -24,7 +24,56 @@ const activityList = (props) => {
 	const [refresh, setRefresh] = useState(true)
 	const { userData } = props.userDataReducer
 	const { queues, isLoading, error } = props.queuesReducer
-
+	const [queues1, setQueues1] = useState([
+		{
+			_id: '1',
+			orderType: "doctor",
+			doctor: {
+				doctorName: "Dr. John Doe",
+			},
+			patient: {
+				patientName: 'Mawar'
+			},
+			queuingNumber: '03',
+			queueID: '1'
+		},
+		{
+			_id: '2',
+			orderType: "doctor",
+			doctor: {
+				doctorName: "Dr. User Name",
+			},
+			patient: {
+				patientName: 'Udin'
+			},
+			queuingNumber: '04',
+			queueID: '2'
+		},
+		{
+			_id: '3',
+			orderType: "doctor",
+			doctor: {
+				doctorName: "Dr. Ujang",
+			},
+			patient: {
+				patientName: 'Eric'
+			},
+			queuingNumber: '05',
+			queueID: '3'
+		},
+		{
+			_id: '4',
+			orderType: "layanan",
+			services: {
+				name: "Cek mata",
+			},
+			patient: {
+				patientName: 'Komeng'
+			},
+			queuingNumber: '03',
+			queueID: '3'
+		}
+	])
 	useEffect(() => {
 		fetchdata();
 	}, [props.navigation.state.params]);
@@ -59,7 +108,7 @@ const activityList = (props) => {
 					/>
 				) : (
 					<View>
-						{!queues?.length && (
+						{!queues1?.length && (
 							<View
 							style={{
 								justifyContent: 'center',
@@ -78,9 +127,9 @@ const activityList = (props) => {
 							loop
 							autoPlay
 							/> : 
-						queues && (
+						queues1 && (
 							<FlatList
-								data={queues}
+								data={queues1}
 								showsVerticalScrollIndicator={false}
 								renderItem={({ item: el }) => {
 									return (

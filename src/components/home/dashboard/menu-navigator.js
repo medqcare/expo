@@ -40,8 +40,8 @@ function MenuNavigator({ navigation, data }) {
 			}
       	>
         	<Penunjang />
-			<Text style={{ marginTop: 10, fontSize: 12, color: '#B5B5B5' }}>
-				Penunjang
+			<Text style={{ marginTop: 10, fontSize: 12, color: '#B5B5B5', textAlign: "center", }}>
+				Layanan Medis
 			</Text>
       	</TouchableOpacity>
       
@@ -63,7 +63,7 @@ function MenuNavigator({ navigation, data }) {
 				style={{ width: 24, height: 24 }}
 			/>
 			<Text style={{ marginTop: 10, fontSize: 12, color: '#B5B5B5' }}>
-				Klinik
+				Outlet
 			</Text>
 		</TouchableOpacity>
       
