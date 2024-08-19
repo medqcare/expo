@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Linking
 } from 'react-native';
 import {
   heightPercentageToDP,
@@ -197,8 +198,8 @@ const ActivityAction = ({ navigation, data }) => {
       <TouchableOpacity
         style={style.content}
         onPress={() => {
-          navigation.navigate('HomeCareStack');
-        }}
+          Linking.openURL('https://labkimiafarma.co.id/homecare/');
+      }}
       >
         <Image
           style={style.image}

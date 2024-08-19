@@ -37,7 +37,7 @@ export function searchAllDoctors(currentPage, location, doctors, filterQuery) {
                 timeout: 4000,
             });
 
-            console.log(data);
+            console.log(data.data, '<<<<<< data');
 
             if (currentPage == 0) {
                 await dispatch({
@@ -138,16 +138,22 @@ export function searchDoctorByName(
             const lng = location?.lng;
             const { data } = await instance({
                 method: "POST",
-                url: `searchDoctor?page=0`,
+                url: `searchDoctor?page=${currentPage}`,
                 data: {
-                    lat: lat ? lat : -6.268809,
-                    lon: lng ? lng : 106.974705,
+                    lat: false ? lat : -6.268809,
+                    lon: false ? lng : 106.974705,
                     maxDistance: 1000000,
+                    // filterQuery,
                     name: searchQuery,
-                    specialist,
                 },
+                timeout: 4000,
+                // data: {
+                //     lat: lat ? lat : -6.268809,
+                //     lon: lng ? lng : 106.974705,
+                //     maxDistance: 1000000,
+                //     // specialist,
+                // },
             });
-
             if (currentPage == 0) {
                 await dispatch({
                     type: SET_DOCTORS,
@@ -165,7 +171,7 @@ export function searchDoctorByName(
                 payload: false,
             });
         } catch (error) {
-            console.log(error);
+            console.log(error, '<<<< ini error 170');
             await dispatch({
                 type: SET_DOCTORS_ERROR,
                 payload: error.message,

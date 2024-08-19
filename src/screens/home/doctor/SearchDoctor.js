@@ -30,10 +30,12 @@ import LottieLoader from "lottie-react-native";
 import { getSpecialists } from "../../../stores/action/specialists";
 import ModalFilterDoctor from "../../../components/modals/ModalFilterDoctor";
 const DEFAULT_SPESIALIS = "Semua";
+import debounce from 'lodash.debounce';
+
 
 function SearchDoctorPage(props) {
     const dispatch = useDispatch();
-    const { SET_SPECIALIST, SET_CURRENT_PAGE, DELETE_DOCTORS } =
+    const { SET_SPECIALIST, SET_CURRENT_PAGE, DELETE_DOCTORS, SET_DOCTORS } =
         keys.doctorKeys;
     const {
         doctors,
@@ -55,7 +57,6 @@ function SearchDoctorPage(props) {
     const [show, setShow] = useState([]);
     const [showLoading, setLoading] = useState(true);
     const [loader, setLoad] = useState(false);
-
     const [modalFilterIsActive, setModalFilterIsActive] = useState();
 
     useEffect(() => {
@@ -89,6 +90,23 @@ function SearchDoctorPage(props) {
                 payload: 0,
             });
         }
+        // console.log("doctor >>>>", doctors[0].doctors.length, "key doctors");
+        // console.log("doctor 1 >>>>", doctors[1].doctors.length, "key doctors 1");
+        // console.log("doctor 2 >>>>", doctors[2].doctors.length, "key doctors 2");
+        // let filteredDoctors = doctors[0].doctors.filter(doctor => {
+        //     return doctor.doctorName.toLowerCase().includes(params.toLowerCase())
+        // })
+        // let temp = [
+
+        // ]
+        // console.log(currentPageReducer, "currentPageReducer");
+        // console.log(params, "params");
+        // console.log(userLocation, "userLocation");
+        // console.log(filteredDoctors.length, 'filteredDoctors.length')
+        // await dispatch({
+        //     type: SET_DOCTORS,
+        //     payload: filteredDoctors,
+        // });
         props.searchDoctorByName(
             currentPageReducer,
             params,
@@ -96,6 +114,8 @@ function SearchDoctorPage(props) {
             doctors
         );
     };
+
+    const debouncedTextChange = debounce((text) => _textChange(text), 500);
 
     const onRefresh = React.useCallback(async () => {
         setLoading(true);
@@ -198,9 +218,7 @@ function SearchDoctorPage(props) {
                                         placeholder={
                                             "cari dokter atau spesialis"
                                         }
-                                        onChangeText={(text) =>
-                                            _textChange(text)
-                                        }
+                                        onChangeText={(text) => debouncedTextChange(text)}
                                     />
                                 </View>
                                 <TouchableOpacity
