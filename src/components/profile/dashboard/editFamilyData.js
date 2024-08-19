@@ -557,29 +557,10 @@ const editFamilyData = (props) => {
             {load ? (
               <ActivityIndicator size={'small'} color="#FFF" />
             ) : (
-              <Text style={{ fontSize: 18, color: '#FFF' }}>Simpan Data</Text>
+              <Text style={{ fontSize: 18, color: '#FFF' }}>Simpan</Text>
             )}
           </TouchableOpacity>
         </View>
-
-        {/* <View style={{ alignItems: 'flex-end', marginTop: 20, marginBottom: 5 }}>    
-            
-                            <TouchableOpacity onPress={() => { validation() }} 
-                                style={container.button}>
-                                {load ? 
-                                    <ActivityIndicator size={'small'} color='#FFF' /> :
-                                    <Text style={{ fontSize: 14, color: '#FFF' }}>Simpan Data</Text>
-                                }
-                            </TouchableOpacity>
-                            {modalS &&
-                                <LottieLoader
-                                    source={require('../../../screens/animation/success-green.json')}
-                                    autoPlay
-                                    loop={false}
-                                    onAnimationFinish={() => props.navigation.navigate('FamilyList')}
-                                />
-                          buttonContainer  }   
-                        </View>    */}
       </ScrollView>
     </KeyboardAvoidingView>
   );
