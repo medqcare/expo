@@ -25,6 +25,66 @@ const {
   SET_APPOINTMENT_ORDER_TYPE
 } = keys.appointmentsKeys
 
+const dummyMedicalServiceAppointments = [
+  {
+    _id: "ms001",
+    services: {
+      name: "Blood Test"
+    },
+    bookingSchedule: "20/06/2023",
+    healthFacility: {
+      facilityName: "Central Lab",
+      location: {
+        lat: -6.2088,
+        long: 106.8456
+      }
+    },
+    patient: {
+      patientName: "John Doe"
+    },
+    totalQueue: 5,
+    currentQueue: 3
+  },
+  {
+    _id: "ms002",
+    services: {
+      name: "X-Ray"
+    },
+    bookingSchedule: "21/06/2023",
+    healthFacility: {
+      facilityName: "Radiology Department",
+      location: {
+        lat: -6.2156,
+        long: 106.8451
+      }
+    },
+    patient: {
+      patientName: "Jane Smith"
+    },
+    totalQueue: 8,
+    currentQueue: 6
+  },
+  {
+    _id: "ms003",
+    services: {
+      name: "Physical Therapy"
+    },
+    bookingSchedule: "22/06/2023",
+    healthFacility: {
+      facilityName: "Rehabilitation Center",
+      location: {
+        lat: -6.2201,
+        long: 106.8301
+      }
+    },
+    patient: {
+      patientName: "Mike Johnson"
+    },
+    totalQueue: 10,
+    currentQueue: 7
+  }
+];
+
 function SelectType({ types = [], onTypeSelected, defaultType = types[0] }) {
   const [typeSelected, setTypeSelected] = useState(defaultType);
   const typeStyleBehavior = (type) => {
@@ -81,7 +141,9 @@ function SelectType({ types = [], onTypeSelected, defaultType = types[0] }) {
 
 const Appointment = (props) => {
   const dispatch = useDispatch()
-  const { doctorAppointments, medicalServiceAppointments, orderType, isLoading, error } = props.appointmentsReducer
+  const { doctorAppointments, orderType, medicalServiceAppointments, isLoading, error } = props.appointmentsReducer
+  // const [medicalServiceAppointments, setMedicalServiceAppointments] = useState(dummyMedicalServiceAppointments);
+
   // console.log(props.navigation.state, "state")
   // console.log(paramOrderType, "param")
   const [reservations, setReservations] = useState([]);
@@ -95,6 +157,7 @@ const Appointment = (props) => {
     appointmentList: null,
     keyToDispatch: null
   })
+
   useEffect(() => {
     (async () => {
       try {
@@ -126,7 +189,7 @@ const Appointment = (props) => {
             })
           } else {
             setCancelReservationData({
-              appointmentList: medicalServiceAppointments,
+              appointmentList: dummyMedicalServiceAppointments,
               keyToDispatch: SET_MEDICAL_SERVICE_APPOINTMENTS,
               
             })
@@ -146,8 +209,9 @@ const Appointment = (props) => {
 		)
 	}
 	const RenderReservations = () => {
-		const data = orderType === 'Konsultasi Dokter' ? doctorAppointments : medicalServiceAppointments
-		const renderFunction = orderType === 'Konsultasi Dokter' ? renderDoctorsAppointment : renderMedicalServiceAppointment
+		const data = orderType === 'Konsultasi Dokter' ? doctorAppointments : dummyMedicalServiceAppointments;
+    const renderFunction = orderType === 'Konsultasi Dokter' ? renderDoctorsAppointment : renderMedicalServiceAppointment;
+ 
 		if(data.length) {
 			return (
 				<FlatList
