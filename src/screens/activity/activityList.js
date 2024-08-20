@@ -72,6 +72,30 @@ const activityList = (props) => {
 			},
 			queuingNumber: '03',
 			queueID: '3'
+		},
+		{
+			_id: '5',
+			orderType: "layanan",
+			services: {
+				name: "Tindakan medis",
+			},
+			patient: {
+				patientName: 'Jane'
+			},
+			queuingNumber: '02',
+			queueID: '3'
+		},
+		{
+			_id: '6',
+			orderType: "layanan",
+			services: {
+				name: "Cek jantung",
+			},
+			patient: {
+				patientName: 'Intan'
+			},
+			queuingNumber: '04',
+			queueID: '3'
 		}
 	])
 	useEffect(() => {

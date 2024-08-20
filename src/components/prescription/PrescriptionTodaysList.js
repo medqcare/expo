@@ -31,6 +31,44 @@ const dimWidth = Dimensions.get("window").width;
 function PrescriptionTodaysList({props }) {
     const { activePrescriptions, activeIsLoading, error } = props.prescriptionsReducer
     const [activeSections, setActiveSections] = useState([]);
+    const dummyActivePrescriptions = [
+        {
+          _id: "1",
+          createdAt: "2023-06-15T10:00:00Z",
+          drugs: [
+            {
+              drugName: "Paracetamol",
+              drugQuantity: 10,
+              information: "After Meal",
+              etiquette: ["Morning", "Evening"],
+              dose: ["1"],
+              notes: "Take with water"
+            },
+            {
+              drugName: "Amoxicillin",
+              drugQuantity: 15,
+              information: "Before Meal",
+              etiquette: ["Morning", "Afternoon", "Evening"],
+              dose: ["1"],
+              notes: "Complete the course"
+            }
+          ]
+        },
+        {
+          _id: "2",
+          createdAt: "2023-06-14T09:30:00Z",
+          drugs: [
+            {
+              drugName: "Ibuprofen",
+              drugQuantity: 20,
+              information: "After Meal",
+              etiquette: ["Morning", "Evening"],
+              dose: ["1"],
+              notes: "Take for pain relief"
+            }
+          ]
+        }
+      ];
     
     const setSections = (sections, isClose, index) => {
         if(isClose){
@@ -179,10 +217,10 @@ function PrescriptionTodaysList({props }) {
   
     return (
         activeIsLoading ? <ActivityIndicator color="blue" size={'small'}/> :
-        activePrescriptions?.length > 0 ? 
+        dummyActivePrescriptions?.length > 0 ? 
             <Accordion
                 activeSections={activeSections}
-                sections={activePrescriptions}
+                sections={dummyActivePrescriptions}
                 touchableComponent={TouchableWithoutFeedback}
                 expandMultiple={true}
                 renderHeader={renderHeader}

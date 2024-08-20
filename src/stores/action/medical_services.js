@@ -33,7 +33,6 @@ export function getMedicalServices(type, status, page, medicalServices, addPage,
 					payload: true
 				})
 			}
-
 			const { data } = await instance({
 				method: 'GET',
 				url: `medical/services?type=${type}&status=${status}&page=${page}&discount=${discount}`,

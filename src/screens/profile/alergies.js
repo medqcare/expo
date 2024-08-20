@@ -100,9 +100,14 @@ const Allergies = (props) => {
 		setIduser({ fullName, _id });
 	}
 
-	BackHandler.addEventListener("hardwareBackPress", () => {
-		return props.navigation.pop();
-	});
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener("hardwareBackPress", () => {
+      props.navigation.pop();
+      return true;
+    });
+
+    return () => backHandler.remove();
+  }, []);
 
   return (
     <View style={styles.container}>

@@ -19,8 +19,6 @@ const initState = {
 };
 
 function doctorReducer(state = initState, action) {
-    console.log("doctorReducer action", action, type);
-    console.log(baseURL, "<<<<< baseURL");
     const { type, payload } = action;
     switch (type) {
         case SET_DOCTORS:

@@ -157,8 +157,15 @@ export default StackHome = createStackNavigator(
   }
 );
 
+function getTabBarVisible(navigation) {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+  return tabBarVisible;
+}
+
 StackHome.navigationOptions = ({ navigation }) => {
-  console.log(navigation.state.index, 'Ini adalah jumlah stack di home');
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
     tabBarVisible = false;
