@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         height: hp("10%"),
         width: "100%",
         backgroundColor: "#2F2F2F",
-        alignItems: "flex-end",
+        alignItems: "center",
         paddingTop: 20,
     },
 
