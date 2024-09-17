@@ -13,7 +13,10 @@ import {
   Keyboard,
 } from 'react-native';
 import { connect } from 'react-redux';
-
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen";
 import Feather from 'react-native-vector-icons/Feather'; // Made for password visibility
 
 import { LinearGradient } from 'expo-linear-gradient'; // Made for background linear gradient
@@ -88,7 +91,7 @@ const SignInScreen = (props) => {
   });
 
   return (
-    <LinearGradient colors={['#243555', '#00514B']}>
+    <LinearGradient colors={['#ffffff', '#ffffff']}>
       <KeyboardAvoidingView
         style={viewStyles.container}
         enabled={false}
@@ -103,7 +106,7 @@ const SignInScreen = (props) => {
         {/* MedQCare Logo */}
         <Image
           style={viewStyles.logoMedQCare}
-          source={require('../../assets/png/LogoMedQCare.png')}
+          source={require('../../assets/png/sign-in-logo-kimia-farma.png')}
         />
 
         {/* Form Container */}
@@ -308,7 +311,7 @@ const viewStyles = StyleSheet.create({
     flex: 1,
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
-    color: '#FFF',
+    color: '#506A79',
   },
   forgotPassword: {
     flexDirection: 'row',
@@ -326,7 +329,7 @@ const viewStyles = StyleSheet.create({
     height: 57,
     marginTop: 50,
     marginBottom: 10,
-    backgroundColor: 'rgba(31, 198, 188, 0.3)',
+    backgroundColor: '#1e5799',
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
@@ -356,7 +359,19 @@ const viewStyles = StyleSheet.create({
   },
 
   logoMedQCare: {
-    marginTop: 10,
+    marginTop: 20,
+    width: wp('70%'),
+    height: hp('18%'),
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 

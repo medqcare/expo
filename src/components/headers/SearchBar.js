@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
   },
 
   searcharea: {
-    borderColor: '#DDDDDD',
+    borderColor: '#000000',
+    backgroundColor: '#FFFFFF',
     borderWidth: 0.5,
     height: 40,
     marginTop: 17,

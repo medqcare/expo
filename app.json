@@ -4,11 +4,11 @@
         "slug": "MedQCare",
         "version": "1.0.0",
         "orientation": "portrait",
-        "icon": "./assets/icon.png",
+        "icon": "./assets/icon-kimia-farma-lab.png",
         "splash": {
-            "image": "./assets/icon.png",
+            "image": "./assets/icon-kimia-farma-lab.png",
             "resizeMode": "contain",
-            "backgroundColor": "#1F1F1F"
+            "backgroundColor": "#FFFFF"
         },
         "updates": {
             "fallbackToCacheTimeout": 0
@@ -26,7 +26,7 @@
         "android": {
             "adaptiveIcon": {
                 "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#1F1F1F"
+                "backgroundColor": "#FFFFFF"
             },
             "permissions": [
                 "android.permission.CAMERA",

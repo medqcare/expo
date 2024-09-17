@@ -187,7 +187,7 @@ export default function DetailResumeMedis(props) {
                           </Text>
                         </View>
                         <View style={styles.item}>
-                          <Text style={styles.textTitle}>Nutrisi</Text>
+                          <Text style={styles.textTitle}>BMI Category</Text>
                           <Text style={styles.textItem}>
                             {resumeMedis.vitalSign?.nutrition || '-'}
                           </Text>

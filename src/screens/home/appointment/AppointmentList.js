@@ -40,7 +40,7 @@ const dummyMedicalServiceAppointments = [
       }
     },
     patient: {
-      patientName: "John Doe"
+      patientName: "Jamal Muhidin"
     },
     totalQueue: 5,
     currentQueue: 3
@@ -59,7 +59,7 @@ const dummyMedicalServiceAppointments = [
       }
     },
     patient: {
-      patientName: "Jane Smith"
+      patientName: "Jamal Muhidin"
     },
     totalQueue: 8,
     currentQueue: 6
@@ -78,7 +78,7 @@ const dummyMedicalServiceAppointments = [
       }
     },
     patient: {
-      patientName: "Mike Johnson"
+      patientName: "Mawar Muhidin"
     },
     totalQueue: 10,
     currentQueue: 7

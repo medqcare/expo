@@ -1,0 +1,56 @@
+[
+	{
+		"_id": {
+			"$oid": "62612b03e820f09c1485adf9"
+		},
+		"name": "Umum"
+	},
+	{
+		"_id": {
+			"$oid": "62612cbce820f09c1485adfa"
+		},
+		"name": "Anak"
+	},
+	{
+		"_id": {
+			"$oid": "636e27a00d4556e899969454"
+		},
+		"name": "Jantung"
+	},
+	{
+		"_id": {
+			"$oid": "636b472738c50a8d48fd0c65"
+		},
+		"name": "Penyakit Dalam"
+	},
+	{
+		"_id": {
+			"$oid": "636a59bd4123ef412b29a240"
+		},
+		"name": "Ginjal"
+	},
+	{
+		"_id": {
+			"$oid": "6369ac3bcb5160a7bb857d95"
+		},
+		"name": "Bedah Umum"
+	},
+	{
+		"_id": {
+			"$oid": "62466a00d468bc00239e5d83"
+		},
+		"name": "Saraf"
+	},
+	{
+		"_id": {
+			"$oid": "62466a00d468bc00239e5d81"
+		},
+		"name": "Mata"
+	},
+	{
+		"_id": {
+			"$oid": "62466a00d468bc00239e5d79"
+		},
+		"name": "Kulit dan Kelamin"
+	}
+]

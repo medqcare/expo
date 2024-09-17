@@ -142,7 +142,7 @@ function MedicalResume(props) {
             setModalKonfirmasi(true);
           }}
         >
-          <Qrcode />
+          {/* <Qrcode /> */}
         </TouchableOpacity>
       </View>
       <View style={Styles.container}>

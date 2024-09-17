@@ -42,6 +42,7 @@ import InstructionModal from "../../../components/InstructionModal";
 import _checkLogin from "../../../helpers/getToken";
 import getToken from "../../../helpers/localStorage/token";
 import axios from "axios";
+import { LinearGradient } from "expo-linear-gradient";
 import { baseURL } from "../../../config";
 
 const dimHeight = Dimensions.get("window").height;
@@ -55,11 +56,11 @@ function HomePage(props) {
     const [promos, setPromos] = useState([
         {
             id: 1,
-            url: require("../../../assets/png/Promo1.png"),
+            url: require("../../../assets/png/promo-1.png"),
         },
         {
             id: 2,
-            url: require("../../../assets/png/Promo2.png"),
+            url: require("../../../assets/png/promo-2.png"),
         },
     ]);
     const [registerToken, setRegisterToken] = useState("");
@@ -180,14 +181,11 @@ function HomePage(props) {
             ) : (
                 <>
                     <View style={style.topMenu}>
-                        <ImageBackground
-                            imageStyle={{
-                                height: hp("25%"),
-                                width: "100%",
-                                resizeMode: "stretch",
-                            }}
-                            source={require("../../../assets/background/RectangleHeader.png")}
-                            style={style.headerImage}
+                    <LinearGradient
+                        colors={['#f9f9f9', '#1e5799']}
+                        style={style.headerImage}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
                         >
                             <View
                                 style={{
@@ -202,15 +200,19 @@ function HomePage(props) {
                                         justifyContent: "space-between",
                                         alignItems: "center",
                                         paddingBottom: 2,
+                                        marginBottom: -14,
+                                        // backgroundColor: 'red', 
+                                        // height: hp('10%'),
                                     }}
                                 >
+                                    
                                     <Image
                                         style={{
-                                            height: dimHeight * 0.035,
-                                            width: dimHeight * 0.18,
-                                            resizeMode: "stretch",
+                                            height: hp('7%'),
+                                            width: wp('32%'),
+                                            resizeMode: 'contain',
                                         }}
-                                        source={require("../../../assets/png/MedQCareLogo.png")}
+                                        source={require("../../../assets/png/header-logo-kimia-farma.png")}
                                     />
                                     <View style={{ flexDirection: "row" }}>
                                         <View
@@ -272,6 +274,9 @@ function HomePage(props) {
                                 </View>
 
                                 <SearchBar
+                                    style={{
+                                        marginTop: 200
+                                    }}
                                     placeholder={"cari dokter..."}
                                     onFocus={() =>
                                         props.navigation.navigate("Doctor", {
@@ -280,7 +285,7 @@ function HomePage(props) {
                                     }
                                 />
                             </View>
-                        </ImageBackground>
+                        </LinearGradient>
                     </View>
 
                     <View style={style.container}>

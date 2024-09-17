@@ -43,9 +43,6 @@ export function getDocumentByPatient(patientID, stringTypeSeparateByComma, page,
 						type: defaultTypes
 					}
 				})
-
-				console.log(`Application found ${data.data.length} medical documents by search query`)
-
 				dispatch({
 					type: SET_MEDICAL_DOCUMENTS,
 					payload: data.data
@@ -61,10 +58,13 @@ export function getDocumentByPatient(patientID, stringTypeSeparateByComma, page,
 						page: page,
 					},
 				})
+				
+				console.log(patientID, '<<<< patientId')
+				console.log(data.data.map(el => el.patientId), '<<<< data')
+				console.log(data.data, '<<<< data')
+				// console.log(`Application found ${data.data.length} medical document(s)`)
 	
-				console.log(`Application found ${data.data.length} medical document(s)`)
-	
-				console.log(`Application found in total of ${data.totalPages} page(s)`) 
+				// console.log(`Application found in total of ${data.totalPages} page(s)`) 
 
 
 				if (page === 1) {

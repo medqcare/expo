@@ -159,7 +159,7 @@ export default function ModalResumeMedis({
                       </Text>
                     </View>
                     <View style={styles.item}>
-                      <Text style={styles.textItem}>Nutrisi</Text>
+                      <Text style={styles.textItem}>BMI Category</Text>
                       <Text style={styles.textItem}>
                         {data.vitalSign.nutrition}
                       </Text>

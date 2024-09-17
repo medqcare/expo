@@ -29,10 +29,10 @@ const activityList = (props) => {
 			_id: '1',
 			orderType: "doctor",
 			doctor: {
-				doctorName: "Dr. John Doe",
+				doctorName: "Dr. Wong",
 			},
 			patient: {
-				patientName: 'Mawar'
+				patientName: 'Mawar Muhidin'
 			},
 			queuingNumber: '03',
 			queueID: '1'
@@ -41,62 +41,15 @@ const activityList = (props) => {
 			_id: '2',
 			orderType: "doctor",
 			doctor: {
-				doctorName: "Dr. User Name",
+				doctorName: "Dr. Wong",
 			},
 			patient: {
-				patientName: 'Udin'
+				patientName: 'Jamal Muhidin'
 			},
 			queuingNumber: '04',
 			queueID: '2'
-		},
-		{
-			_id: '3',
-			orderType: "doctor",
-			doctor: {
-				doctorName: "Dr. Ujang",
-			},
-			patient: {
-				patientName: 'Eric'
-			},
-			queuingNumber: '05',
-			queueID: '3'
-		},
-		{
-			_id: '4',
-			orderType: "layanan",
-			services: {
-				name: "Cek mata",
-			},
-			patient: {
-				patientName: 'Komeng'
-			},
-			queuingNumber: '03',
-			queueID: '3'
-		},
-		{
-			_id: '5',
-			orderType: "layanan",
-			services: {
-				name: "Tindakan medis",
-			},
-			patient: {
-				patientName: 'Jane'
-			},
-			queuingNumber: '02',
-			queueID: '3'
-		},
-		{
-			_id: '6',
-			orderType: "layanan",
-			services: {
-				name: "Cek jantung",
-			},
-			patient: {
-				patientName: 'Intan'
-			},
-			queuingNumber: '04',
-			queueID: '3'
 		}
+	
 	])
 	useEffect(() => {
 		fetchdata();
